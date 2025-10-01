@@ -111,11 +111,11 @@ const charactersNames = []
   Dovrai accedere alla proprietà "name" di ogni oggetto in esso contenuto, e inserirla nell'array "charactersNames" creato precedentemente.
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
-let allNames = ''
+
 for(let i = 0; i < starWarsCharacters.length; i++){
-    allNames = allNames + starWarsCharacters[i].name + ''
+charactersNames.push(starWarsCharacters[i].name)
 } 
-console.log('Nomi', allNames)
+console.log('Name', charactersNames)
 
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
@@ -144,7 +144,30 @@ let eyeColor = {
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
+for(let i=0; i<starWarsCharacters.length; i++){
+switch(starWarsCharacters[i].eye_color){
+    case 'blue':
+        eye_color.blue.push(starWarsCharacters[i])
+        break
 
+    case 'red':
+        eye_color.red.push(starWarsCharacters[i])
+        break
+
+    case 'brown':
+        eye_color.brown.push(starWarsCharacters[i])
+        break
+
+    case 'yellow':
+        eye_color.yellow.push(starWarsCharacters[i])
+        break
+
+    case 'blue-grey':
+        eye_color[blue-grey].push(starWarsCharacters[i])
+        break
+        default:
+}
+}
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
@@ -152,7 +175,7 @@ let eyeColor = {
 let crewMass = 0
 let i = 0
 while(i < starWarsCharacters.length){
-    crewMass += Number(starWarsCharacters[i].mass)
+    crewMass = crewMass + starWarsCharacters[i].mass
     i++
 }
 console.log("La massa totale dell'equipaggio è", crewMass)
@@ -170,12 +193,16 @@ console.log("La massa totale dell'equipaggio è", crewMass)
 */
 if(crewMass < 500){
     console.log('Ship is under loaded')
+
 }else if(crewMass >= 500 && crewMass < 700){
     console.log('Ship is half loaded')
+
 }else if(crewMass >= 700 && crewMass < 900){
     console.log('Warning: Load is over 700')
+
 }else if(crewMass >= 900 && crewMass < 1000){
     console.log('Critical Load: Over 900')
+    
 }else if(crewMass > 1000) {
     console.log('DANGER! OVERLOAD ALERT: escape from ship now!')
 }
